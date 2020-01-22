@@ -11,7 +11,7 @@ export default function App() {
 
   const configureNewGameHandler = () =>{
     setguessRounds(0)
-
+    setUserNu(null)
   }
 
   const startGameHandler = (selectedNu) =>{
@@ -19,7 +19,7 @@ export default function App() {
     setguessRounds(0)
   }
 
-  const gameOverHandler = (noOfRounds) =>_{
+  const gameOverHandler = (noOfRounds) =>{
     setguessRounds(noOfRounds)
   }
 
