@@ -27,9 +27,9 @@ const GameScreen = props =>{
         }
     },[currentGuess , userChoice ,onGameOver]);
 
-    const nextGuessHandler = direction =>{
+    const GuessHandler = direction => {
         if((direction === 'lower' && currentGuess < props.userChoice) || (direction === "greater" && currentGuess > props.userChoice)){
-                Alert.alert("Don't Lie", "You know this is Wrong...",[{text :'Sorry!' , style : 'cancel'}])
+                Alert.alert("Don't Lie", "You know this is Wrong...",[{text :'Sorry!' , style : 'cancel'}]);
                 return;
         }
          if(direction === 'lower'){
@@ -40,15 +40,15 @@ const GameScreen = props =>{
          const nextNumber = generateRandomBetween(currentLow.current, currentHigh.current , currentGuess)
          setCurrentGuess(nextNumber)
          setRounds(curRounds => curRounds +1)
-    }
+    }; 
 
     return(
         <View style={styles.screen}>
             <Text>Opponent's Guess</Text>
             <NumberContainer selectNu = {currentGuess}/>
             <Card style={styles.btnContainer}>
-                <Button title="Lower" onPress={() => {nextGuessHandler.bind(this,'lower')}}/>
-                <Button title="Greater" onPress={() => {nextGuessHandler.bind(this,'greater')}}/>
+                <Button title="Lower" onPress={GuessHandler.bind(this,'lower')}/>
+                <Button title="Greater" onPress={GuessHandler.bind(this,'greater')}/>
             </Card>
         </View>
     )

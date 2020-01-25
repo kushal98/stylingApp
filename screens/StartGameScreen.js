@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     title :{
         fontSize :20,
         marginVertical:10,
-
     },
     inp:{
         width : '40%',
